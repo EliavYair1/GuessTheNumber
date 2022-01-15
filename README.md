@@ -1,6 +1,6 @@
-Guess The Number Project
+# Guess The Number Project
 
-Description 
+# Description 
 
 The "Guess The Number" project is a simple javascript based on game.
 
