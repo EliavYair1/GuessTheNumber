@@ -15,49 +15,36 @@ document.querySelector('.check').addEventListener('click', function () {
   console.log(typeof guess);
   //when there is no number
   if (!guess) {
-    document.querySelector('.message').textContent = 'No Number!⛔';
-
+displayMessage('No Number!⛔')
     score--;
     document.querySelector('.score').textContent = score;
 
     // when player wins
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = '🥳Correct Number!✔️';
+    displayMessage('🥳Correct Number!✔️')
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = secretNumber;
+    
     if (score > highscore) {
       highscore = score;
       document.querySelector('.highscore').textContent = highscore;
     }
 
-    // when the number is too high
-  } else if (guess > secretNumber) {
+    // when guessing wrong
+  } else if (guess !== secretNumber) {
     if (score >= 1) {
-      document.querySelector('.message').textContent = 'Too High!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-
-      document.querySelector('body').style.backgroundColor = 'red';
-      document.querySelector('.number').style.width = '30rem';
-      document.querySelector('.message').textContent = 'Game Over😭';
-      document.querySelector('.score').textContent = 0;
-    }
-    // when the number is too low
-  } else if (guess < secretNumber) {
-    if (score >= 1) {
-
-      document.querySelector('.message').textContent = 'Too Low!';
+      displayMessage(guess > secretNumber ? 'Too High!' : 'Too Low!')
       score--;
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('body').style.backgroundColor = 'red';
       document.querySelector('.number').style.width = '30rem';
-      document.querySelector('.message').textContent = 'Game Over😭';
+      displayMessage('Game Over😭')
       document.querySelector('.score').textContent = 0;
     }
   }
+ 
 
 })
 
