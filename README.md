@@ -19,9 +19,9 @@ by dubble clicking it you reset the game completly.
 **********
 # Installation
 
-basiclly just download the files to your editor
-go to the project directory by typing cd "guessMyNumber" 
-then run it with "live-server" command on the terminal.
+Basiclly just download the files to your editor,
+Go to the project directory by typing cd "guessMyNumber". 
+Then run it with "live-server" command on the terminal.
 and start guessing!
 
 # Credits
